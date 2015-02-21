@@ -15,7 +15,7 @@ The plugin converts only the new permanent links and the names of uploaded files
 
 ##Override the standard transliteration symbol table
 You can override the standard transliteration symbol table with a filter dco_symbol_table
-```javascript
+```php
 function themename_symbol_table($symbol_table = array()) {	
 	return array(
 		'А'	 => 'A', 'Б'	 => 'B', 'В'	 => 'V', 'Г'	 => 'G', 'Д'	 => 'D',
