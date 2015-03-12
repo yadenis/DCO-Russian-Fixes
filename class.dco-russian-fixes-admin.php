@@ -1,9 +1,10 @@
 <?php
 
 class DCO_RF_Admin extends DCO_RF_Base {
+
 	public function __construct() {
 		parent::__construct();
-		
+
 		$this->get_options();
 		$this->init_hooks();
 	}
@@ -60,16 +61,16 @@ class DCO_RF_Admin extends DCO_RF_Base {
 
 	function render() {
 		?>
-		<form action="options.php" method="post">
-
+		<div class="wrap">
 			<h2>DCO Russian Fixes</h2>
-
-			<?php
-			settings_fields( 'dco_rf' );
-			do_settings_sections( 'dco_rf' );
-			submit_button( null, 'primary', 'submit', true, disabled( has_filter( 'dco_rf_get_options' ), true, false ) );
-			?>
-		</form>
+			<form action="options.php" method="post">
+				<?php
+				settings_fields( 'dco_rf' );
+				do_settings_sections( 'dco_rf' );
+				submit_button( null, 'primary', 'submit', true, disabled( has_filter( 'dco_rf_get_options' ), true, false ) );
+				?>
+			</form>
+		</div>
 		<?php
 	}
 
