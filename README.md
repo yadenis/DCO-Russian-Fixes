@@ -1,43 +1,46 @@
 # DCO Russian Fixes
 
 DCO Russian Fixes is a Wordpress plugin is intended for:
-  - transliteration of russian permanent links
-  - transliteration of russian names of uploading files
+  - transliteration permanent links
+  - transliteration russian names of uploading files
   - correct dates for russian language
-  - remove unused links from head
 
 # Version
-0.1.1
+1.0.1
 
 #Usage
-The plugin does not require any configuration. After installation and activation will work automatically.
-The plugin converts only the new permanent links and the names of uploaded files. **Permanent links and file names created before activating the plugin will not be converted.**
+The plugin does not require any configuration. After installation and activation will work automatically. The plugin converts only the new permanent links and the names of uploaded files. **Permanent links and file names created before activating the plugin will not be converted.**
 
-##Override the standard transliteration symbol table
-You can override the standard transliteration symbol table with a filter dco_symbol_table
-```php
-function themename_symbol_table($symbol_table = array()) {	
-	return array(
-		'А'	 => 'A', 'Б'	 => 'B', 'В'	 => 'V', 'Г'	 => 'G', 'Д'	 => 'D',
-		'Е'	 => 'E', 'Ё'	 => 'YO', 'Ж'	 => 'ZH', 'З'	 => 'Z', 'И'	 => 'I',
-		'Й'	 => 'Y', 'К'	 => 'K', 'Л'	 => 'L', 'М'	 => 'M', 'Н'	 => 'N',
-		'О'	 => 'O', 'П'	 => 'P', 'Р'	 => 'R', 'С'	 => 'S', 'Т'	 => 'T',
-		'У'	 => 'U', 'Ф'	 => 'F', 'Х'	 => 'H', 'Ц'	 => 'C', 'Ч'	 => 'CH',
-		'Ш'	 => 'SH', 'Щ'	 => 'SHH', 'Ъ'	 => "", 'Ы'	 => 'YI', 'Ь'	 => "",
-		'Э'	 => 'E`', 'Ю'	 => 'YU', 'Я'	 => 'YA',
-		'а'	 => 'a', 'б'	 => 'b', 'в'	 => 'v', 'г'	 => 'g', 'д'	 => 'd',
-		'е'	 => 'e', 'ё'	 => 'yo', 'ж'	 => 'zh', 'з'	 => 'z', 'и'	 => 'i',
-		'й'	 => 'y', 'к'	 => 'k', 'л'	 => 'l', 'м'	 => 'm', 'н'	 => 'n',
-		'о'	 => 'o', 'п'	 => 'p', 'р'	 => 'r', 'с'	 => 's', 'т'	 => 't',
-		'у'	 => 'u', 'ф'	 => 'f', 'х'	 => 'h', 'ц'	 => 'c', 'ч'	 => 'ch',
-		'ш'	 => 'sh', 'щ'	 => 'shh', 'ь'	 => "", 'ы'	 => 'yi', 'ъ'	 => "",
-		'э'	 => 'e`', 'ю'	 => 'yu', 'я'	 => 'ya');
-}
+#Settings
+ - Transliterate url
+ - Transliterate file name
+ - Correct dates
 
-add_filter('dco_symbol_table', 'themename_symbol_table');
-```
+#Filters list
+##dco_rf_get_options
+Filter for hardcoding override plugin settings. *You won't be able to edit them on the settings page anymore when using this filter.*
+##dco_rf_symbol_table
+Filter for override standard transliterate symbol table
+##dco_rf_transliterate
+Filter for change transliterate results
+##dco_rf_replace_dates_table
+Filter for override standard correct dates table
+##dco_rf_correct_dates
+Filter for change correct dates results
+##dco_rf_replace_archive_titles_table
+Filter for override standard correct archive titles table
+##dco_rf_correct_archive_titles
+Filter for change correct archive titles results
 
 #Changelog
+##1.0.1
+ - Corrected settings page
+
+##1.0
+ - Rework architecture
+ - Add settings
+ - Add additional hooks
+
 ##0.1.1
 - Add filter "dco_symbol_table" for overriding the standard transliteration table
 
