@@ -9,7 +9,7 @@ DCO Russian Fixes is a Wordpress plugin is intended for:
 1.0.1
 
 #Usage
-The plugin does not require any configuration. After installation and activation will work automatically. The plugin converts only the new permanent links and the names of uploaded files. **Permanent links and file names created before activating the plugin will not be converted.**
+The plugin does not require any configuration. After installation and activation will work automatically. The plugin converts only the new permanent links and the names of new uploaded files. **Permanent links and file names created before activating the plugin will not be converted.**
 
 #Settings
  - Transliterate url
