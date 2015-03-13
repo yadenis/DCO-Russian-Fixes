@@ -4,12 +4,8 @@ class DCO_RF_Base {
 
 	protected $options = array();
 
-	public function __construct() {
-		$this->get_options();
-		$this->init_hooks();
-	}
-
 	protected function init_hooks() {
+		$this->get_options();
 		add_action( 'admin_init', array( $this, 'load_language' ) );
 	}
 
@@ -30,5 +26,3 @@ class DCO_RF_Base {
 	}
 
 }
-
-$dco_rf_base = new DCO_RF_Base();

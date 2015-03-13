@@ -3,13 +3,12 @@
 class DCO_RF_Admin extends DCO_RF_Base {
 
 	public function __construct() {
-		parent::__construct();
-
-		$this->get_options();
-		$this->init_hooks();
+		add_action( 'init', array($this, 'init_hooks'));
 	}
 
-	protected function init_hooks() {
+	public function init_hooks() {
+		parent::init_hooks();
+		
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'create_menu' ) );
 	}

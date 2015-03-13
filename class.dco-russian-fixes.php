@@ -3,11 +3,12 @@
 class DCO_RF extends DCO_RF_Base {
 
 	public function __construct() {
-		parent::__construct();
-		$this->init_hooks();
+		add_action( 'init', array($this, 'init_hooks'));
 	}
 
-	protected function init_hooks() {
+	public function init_hooks() {
+		parent::init_hooks();
+		
 		if ( is_admin() ) {
 			if ( $this->options[ 'transliterate_url' ] ) {
 				add_filter( 'sanitize_title', array( $this, 'transliterate' ), 9 );
@@ -32,8 +33,6 @@ class DCO_RF extends DCO_RF_Base {
 	 * Transliterate urls and files
 	 */
 	public function transliterate( $string ) {
-		global $wpdb;
-
 		// define symbols table
 		$symbol_table = array(
 			'А'	 => 'A', 'Б'	 => 'B', 'В'	 => 'V', 'Г'	 => 'G', 'Д'	 => 'D',
