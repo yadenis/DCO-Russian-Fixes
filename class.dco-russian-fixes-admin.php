@@ -11,7 +11,10 @@ class DCO_RF_Admin extends DCO_RF_Base {
 
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'create_menu' ) );
-
+		
+		//Additional links on the plugin page
+		add_filter('plugin_row_meta', array($this, 'register_plugin_links'), 10, 2);
+				
 		if ( $this->options[ 'transliterate_url' ] ) {
 			add_filter( 'sanitize_title', array( $this, 'transliterate' ), 9 );
 		}
@@ -51,6 +54,15 @@ class DCO_RF_Admin extends DCO_RF_Base {
 		return apply_filters( 'dco_rf_transliterate', mb_strtolower( $dco_string, 'UTF-8' ), $string, $symbol_table );
 	}
 
+	public function register_plugin_links($links, $file) {
+		if($file == DCO_RF__PLUGIN_BASENAME) {
+			$links[] = '<a href="https://github.com/Denis-co/DCO-Russian-Fixes">' . __('GitHub', 'dco-rf') . '</a>';
+			$links[] = '<a href="http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html">' . __('Plugin page', 'dco-rf') . '</a>';
+		}
+		
+		return $links;
+	}
+	
 	public function create_menu() {
 		add_options_page( __( 'DCO Russian Fixes', 'dco-rf' ), __( 'DCO Russian Fixes', 'dco-rf' ), 'manage_options', 'dco_russian_fixes', array( $this, 'render' ) );
 	}
