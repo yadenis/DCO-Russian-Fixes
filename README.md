@@ -90,7 +90,7 @@ add_filter( 'dco_rf_symbol_table', 'custom_transliterate_table' );
 
 #Changelog
 ##1.0.4
- - Add additional links for the WP plugin configuration page
+ - Added additional links for the WP plugin configuration page
 
 ##1.0.3
  - Optimized
