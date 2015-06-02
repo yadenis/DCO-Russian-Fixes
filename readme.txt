@@ -2,8 +2,8 @@
 Contributors: denisco
 Tags: transliteration, russian
 Requires at least: 4.1
-Tested up to: 4.2
-Stable tag: 1.0.4
+Tested up to: 4.2.2
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ No. The plugin converts only the new permanent links and the names of new upload
 1. Settings page
 
 == Changelog ==
+
+= 1.0.5 =
+* Added support transliteration for frontend
 
 = 1.0.4 =
 * Added additional links for the WP plugin configuration page
