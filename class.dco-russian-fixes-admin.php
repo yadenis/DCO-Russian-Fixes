@@ -11,58 +11,24 @@ class DCO_RF_Admin extends DCO_RF_Base {
 
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'create_menu' ) );
-		
+
 		//Additional links on the plugin page
-		add_filter('plugin_row_meta', array($this, 'register_plugin_links'), 10, 2);
-				
+		add_filter( 'plugin_row_meta', array( $this, 'register_plugin_links' ), 10, 2 );
+
 		if ( $this->options[ 'transliterate_url' ] ) {
 			add_filter( 'sanitize_title', array( $this, 'transliterate' ), 9 );
 		}
-		if ( $this->options[ 'transliterate_file_name' ] ) {
-			add_filter( 'sanitize_file_name', array( $this, 'transliterate' ) );
-		}
 	}
 
-	/**
-	 * Transliterate urls and files
-	 */
-	public function transliterate( $string ) {
-		// define symbols table
-		$symbol_table = array(
-			'А'	 => 'A', 'Б'	 => 'B', 'В'	 => 'V', 'Г'	 => 'G', 'Д'	 => 'D',
-			'Е'	 => 'E', 'Ё'	 => 'YO', 'Ж'	 => 'ZH', 'З'	 => 'Z', 'И'	 => 'I',
-			'Й'	 => 'Y', 'К'	 => 'K', 'Л'	 => 'L', 'М'	 => 'M', 'Н'	 => 'N',
-			'О'	 => 'O', 'П'	 => 'P', 'Р'	 => 'R', 'С'	 => 'S', 'Т'	 => 'T',
-			'У'	 => 'U', 'Ф'	 => 'F', 'Х'	 => 'H', 'Ц'	 => 'C', 'Ч'	 => 'CH',
-			'Ш'	 => 'SH', 'Щ'	 => 'SHH', 'Ъ'	 => "", 'Ы'	 => 'YI', 'Ь'	 => "",
-			'Э'	 => 'E`', 'Ю'	 => 'YU', 'Я'	 => 'YA',
-			'а'	 => 'a', 'б'	 => 'b', 'в'	 => 'v', 'г'	 => 'g', 'д'	 => 'd',
-			'е'	 => 'e', 'ё'	 => 'yo', 'ж'	 => 'zh', 'з'	 => 'z', 'и'	 => 'i',
-			'й'	 => 'y', 'к'	 => 'k', 'л'	 => 'l', 'м'	 => 'm', 'н'	 => 'n',
-			'о'	 => 'o', 'п'	 => 'p', 'р'	 => 'r', 'с'	 => 's', 'т'	 => 't',
-			'у'	 => 'u', 'ф'	 => 'f', 'х'	 => 'h', 'ц'	 => 'c', 'ч'	 => 'ch',
-			'ш'	 => 'sh', 'щ'	 => 'shh', 'ь'	 => "", 'ы'	 => 'yi', 'ъ'	 => "",
-			'э'	 => 'e`', 'ю'	 => 'yu', 'я'	 => 'ya'
-		);
-
-		$symbol_table = apply_filters( 'dco_rf_symbol_table', $symbol_table );
-
-		// transliterate
-		$dco_string	 = strtr( $string, $symbol_table );
-		$dco_string	 = preg_replace( "/[^A-Za-z0-9`'_\-\.]/", '-', $dco_string );
-
-		return apply_filters( 'dco_rf_transliterate', mb_strtolower( $dco_string, 'UTF-8' ), $string, $symbol_table );
-	}
-
-	public function register_plugin_links($links, $file) {
-		if($file == DCO_RF__PLUGIN_BASENAME) {
-			$links[] = '<a href="https://github.com/Denis-co/DCO-Russian-Fixes">' . __('GitHub', 'dco-rf') . '</a>';
-			$links[] = '<a href="http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html">' . __('Plugin page', 'dco-rf') . '</a>';
+	public function register_plugin_links( $links, $file ) {
+		if ( $file == DCO_RF__PLUGIN_BASENAME ) {
+			$links[] = '<a href="https://github.com/Denis-co/DCO-Russian-Fixes">' . __( 'GitHub', 'dco-rf' ) . '</a>';
+			$links[] = '<a href="http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html">' . __( 'Plugin page', 'dco-rf' ) . '</a>';
 		}
-		
+
 		return $links;
 	}
-	
+
 	public function create_menu() {
 		add_options_page( __( 'DCO Russian Fixes', 'dco-rf' ), __( 'DCO Russian Fixes', 'dco-rf' ), 'manage_options', 'dco_russian_fixes', array( $this, 'render' ) );
 	}

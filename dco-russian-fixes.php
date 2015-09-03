@@ -17,4 +17,6 @@ define( 'DCO_RF__PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 require_once( DCO_RF__PLUGIN_DIR . 'class.dco-russian-fixes-base.php' );
 require_once( DCO_RF__PLUGIN_DIR . 'class.dco-russian-fixes.php' );
-require_once( DCO_RF__PLUGIN_DIR . 'class.dco-russian-fixes-admin.php' );
+if ( is_admin() ) {
+	require_once( DCO_RF__PLUGIN_DIR . 'class.dco-russian-fixes-admin.php' );
+}
