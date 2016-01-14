@@ -9,6 +9,7 @@
   Author URI: http://denisco.pro
   License: GPLv2 or later
   Text Domain: dco-rf
+  Domain Path: /languages
  */
 
 define( 'DCO_RF__PLUGIN_URL', plugin_dir_url( __FILE__ ) );

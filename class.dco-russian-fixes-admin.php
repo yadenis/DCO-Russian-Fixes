@@ -77,7 +77,7 @@ class DCO_RF_Admin extends DCO_RF_Base {
 	function render() {
 		?>
 		<div class="wrap">
-			<h2>DCO Russian Fixes</h2>
+			<h1><?php _e('DCO Russian Fixes'); ?></h1>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( 'dco_rf' );
