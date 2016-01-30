@@ -3,7 +3,7 @@ Contributors: denisco
 Tags: transliteration, russian
 Requires at least: 4.1
 Tested up to: 4.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,12 @@ No. The plugin converts only the new permanent links and the names of new upload
 1. Settings page
 
 == Changelog ==
+
+= 1.0.7 =
+* Corrected localization
+* Updated admin settings page heading to WordPress 4.3 styles
+* Fixed bug with "э" transliteration for upload files
+* Restricted direct access to plugin files
 
 = 1.0.6 =
 * Fixed bug with russian urls

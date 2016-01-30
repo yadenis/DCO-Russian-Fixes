@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') or die;
 
 class DCO_RF extends DCO_RF_Base {
 
