@@ -1,5 +1,6 @@
 === DCO Russian Fixes ===
 Contributors: denisco
+Donate link: https://www.paypal.me/yadenis
 Tags: transliteration, russian
 Requires at least: 4.1
 Tested up to: 4.4
