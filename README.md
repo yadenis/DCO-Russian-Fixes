@@ -2,7 +2,7 @@
 
 [Описание плагина на русском языке](http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html "Страница плагина на русском языке")
 
-DCO Russian Fixes is a Wordpress plugin is intended for:
+DCO Russian Fixes is a WordPress plugin is intended for:
   - transliteration permanent links
   - transliteration russian names of uploading files
   - correct dates for russian language
