@@ -8,12 +8,12 @@ Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add Wordpress russian language fixes.
+Add WordPress russian language fixes.
 
 == Description ==
 [GitHub](https://github.com/Denis-co/DCO-Russian-Fixes "GitHub plugin repository")
 
-DCO Russian Fixes is a Wordpress plugin is intended for:
+DCO Russian Fixes is a WordPress plugin is intended for:
 
 * transliteration permanent links
 * transliteration russian names of uploading files
