@@ -78,7 +78,7 @@ No. The plugin converts only the new permanent links and the names of new upload
 
 = 1.0.8 =
 * Fixed Text Domain
-* Transliteration title enabled for frontend of site
+* Transliteration post url enabled for frontend of site
 
 = 1.0.7 =
 * Corrected localization

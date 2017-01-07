@@ -91,7 +91,7 @@ add_filter( 'dco_rf_symbol_table', 'custom_transliterate_table' );
 #Changelog
 ##1.0.8
  - Fixed Text Domain
- - Transliteration title enabled for frontend of site
+ - Transliteration post url enabled for frontend of site
 
 ##1.0.7
  - Corrected localization
