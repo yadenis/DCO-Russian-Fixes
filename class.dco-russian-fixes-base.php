@@ -9,6 +9,10 @@ class DCO_RF_Base {
 		$this->get_options();
 		add_action( 'admin_init', array( $this, 'load_language' ) );
 
+		if ( $this->options[ 'transliterate_url' ] ) {
+			add_filter( 'sanitize_title', array( $this, 'transliterate' ), 9 );
+		}
+                
 		if ( $this->options[ 'transliterate_file_name' ] ) {
 			add_filter( 'sanitize_file_name', array( $this, 'transliterate' ) );
 		}
@@ -27,7 +31,7 @@ class DCO_RF_Base {
 	}
 
 	public function load_language() {
-		load_plugin_textdomain( 'dco-rf', false, plugin_basename( DCO_RF__PLUGIN_DIR ) . '/languages' );
+		load_plugin_textdomain( 'dco-russian-fixes', false, plugin_basename( DCO_RF__PLUGIN_DIR ) . '/languages' );
 	}
 
 	/**

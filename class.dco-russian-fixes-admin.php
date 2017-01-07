@@ -15,23 +15,19 @@ class DCO_RF_Admin extends DCO_RF_Base {
 
 		//Additional links on the plugin page
 		add_filter( 'plugin_row_meta', array( $this, 'register_plugin_links' ), 10, 2 );
-
-		if ( $this->options[ 'transliterate_url' ] ) {
-			add_filter( 'sanitize_title', array( $this, 'transliterate' ), 9 );
-		}
 	}
 
 	public function register_plugin_links( $links, $file ) {
 		if ( $file == DCO_RF__PLUGIN_BASENAME ) {
-			$links[] = '<a href="https://github.com/Denis-co/DCO-Russian-Fixes">' . __( 'GitHub', 'dco-rf' ) . '</a>';
-			$links[] = '<a href="http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html">' . __( 'Plugin page', 'dco-rf' ) . '</a>';
+			$links[] = '<a href="https://github.com/Denis-co/DCO-Russian-Fixes">' . __( 'GitHub', 'dco-russian-fixes' ) . '</a>';
+			$links[] = '<a href="http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html">' . __( 'Plugin page', 'dco-russian-fixes' ) . '</a>';
 		}
 
 		return $links;
 	}
 
 	public function create_menu() {
-		add_options_page( __( 'DCO Russian Fixes', 'dco-rf' ), __( 'DCO Russian Fixes', 'dco-rf' ), 'manage_options', 'dco_russian_fixes', array( $this, 'render' ) );
+		add_options_page( __( 'DCO Russian Fixes', 'dco-russian-fixes' ), __( 'DCO Russian Fixes', 'dco-russian-fixes' ), 'manage_options', 'dco_russian_fixes', array( $this, 'render' ) );
 	}
 
 	public function register_settings() {
@@ -42,15 +38,15 @@ class DCO_RF_Admin extends DCO_RF_Base {
 		);
 
 		add_settings_field(
-			'transliterate_url', __( 'Transliterate url', 'dco-rf' ), array( $this, 'transliterate_url_render' ), 'dco_rf', 'dco_rf_general'
+			'transliterate_url', __( 'Transliterate url', 'dco-russian-fixes' ), array( $this, 'transliterate_url_render' ), 'dco_rf', 'dco_rf_general'
 		);
 
 		add_settings_field(
-			'transliterate_file_name', __( 'Transliterate file name', 'dco-rf' ), array( $this, 'transliterate_file_name_render' ), 'dco_rf', 'dco_rf_general'
+			'transliterate_file_name', __( 'Transliterate file name', 'dco-russian-fixes' ), array( $this, 'transliterate_file_name_render' ), 'dco_rf', 'dco_rf_general'
 		);
 
 		add_settings_field(
-			'correct_dates', __( 'Correct dates', 'dco-rf' ), array( $this, 'correct_dates_render' ), 'dco_rf', 'dco_rf_general'
+			'correct_dates', __( 'Correct dates', 'dco-russian-fixes' ), array( $this, 'correct_dates_render' ), 'dco_rf', 'dco_rf_general'
 		);
 	}
 
@@ -78,7 +74,7 @@ class DCO_RF_Admin extends DCO_RF_Base {
 	function render() {
 		?>
 		<div class="wrap">
-			<h1><?php _e('DCO Russian Fixes', 'dco-rf'); ?></h1>
+			<h1><?php _e('DCO Russian Fixes', 'dco-russian-fixes'); ?></h1>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( 'dco_rf' );

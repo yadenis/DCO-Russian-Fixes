@@ -4,11 +4,11 @@
   Plugin Name: DCO russian fixes
   Plugin URI: https://github.com/Denis-co/dco-russian-fixes
   Description: Add Wordpress russian language fixes
-  Version: 1.0.7
+  Version: 1.0.8
   Author: Denis co.
   Author URI: http://denisco.pro
   License: GPLv2 or later
-  Text Domain: dco-rf
+  Text Domain: dco-russian-fixes
   Domain Path: /languages
  */
 

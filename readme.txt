@@ -3,16 +3,14 @@ Contributors: denisco
 Donate link: https://www.paypal.me/yadenis
 Tags: transliteration, russian
 Requires at least: 4.1
-Tested up to: 4.4
-Stable tag: 1.0.7
+Tested up to: 4.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Add Wordpress russian language fixes.
 
 == Description ==
-[Описание плагина на русском языке](http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html "Страница плагина на русском языке")
-
 [GitHub](https://github.com/Denis-co/DCO-Russian-Fixes "GitHub plugin repository")
 
 DCO Russian Fixes is a Wordpress plugin is intended for:
@@ -77,6 +75,10 @@ No. The plugin converts only the new permanent links and the names of new upload
 1. Settings page
 
 == Changelog ==
+
+= 1.0.8 =
+* Fixed Text Domain
+* Transliteration title enabled for frontend of site
 
 = 1.0.7 =
 * Corrected localization
