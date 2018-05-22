@@ -2,16 +2,16 @@
 
 [Описание плагина на русском языке](http://www.compnot.ru/wordpress/dco-russian-fixes-korrektiruem-russkij-wordpress.html "Страница плагина на русском языке")
 
-DCO Russian Fixes is a WordPress plugin is intended for:
-  - transliteration permanent links
-  - transliteration russian names of uploading files
-  - correct dates for russian language
+DCO Russian Fixes is a WordPress plugin that is intended for:
+  - transliteration of permanent links
+  - transliteration of Russian names of uploading files
+  - correct date format for Russian language
 
 # Version
 1.0.8
 
 #Usage
-The plugin does not require any configuration. After installation and activation will work automatically. The plugin converts only the new permanent links and the names of new uploaded files. **Permanent links and file names created before activating the plugin will not be converted.**
+The plugin does not require any configuration. After installation and activation it will work automatically. The plugin converts only new permanent links and the names of new uploaded files. **Permanent links and file names that were created before the plugin was activated will not be converted.**
 
 #Settings
  - Transliterate url
