@@ -11,7 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add WordPress russian language fixes.
 
 == Description ==
-[GitHub](https://github.com/Denis-co/DCO-Russian-Fixes "GitHub plugin repository")
+**Not maintained**
+This plugin will no longer be maintained. Please use [Cyr-To-Lat](https://ru.wordpress.org/plugins/cyr2lat/).
 
 DCO Russian Fixes is a WordPress plugin is intended for:
 
@@ -58,6 +59,7 @@ Filter for change correct archive titles results
 
 = Examples of using filters =
 **Hardcoding override plugin settings**
+
 `function custom_get_options( $current, $options, $default ) {
 	$array = array(
 		'transliterate_url'			 => 1,
@@ -79,6 +81,7 @@ add_filter( 'dco_rf_get_options', 'custom_get_options', 10, 3 );
 */`
 
 **Override standard transliterate symbol table**
+
 `function custom_transliterate_table( $symbol_table ) {
 	$symbol_table = array(
 		'А'	 => 'A', 'Б'	 => 'B', 'В'	 => 'V', 'Г'	 => 'G', 'Д'	 => 'D',
